@@ -1,0 +1,61 @@
+#include <iostream>
+#include <queue>
+#include <stack>
+#include <algorithm>
+#include<cstdio>
+#include<vector>
+#include<set>
+#include<map>
+#include<string>
+
+
+using namespace std;
+int main() {
+
+	#define Tsetso ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+	Tsetso
+	int count = 0;
+	vector<int>v;
+	for (int i = 2; i <= 50; i++) {
+		bool is = 1;
+		for (int j = 2; j < i; j++) 
+			if (i % j == 0)
+				is = 0;
+		
+		if(is)
+		{
+			
+			v.push_back(i);
+		}
+	}
+	
+	int ans = 0;
+	//int ss = 0;
+	for(int i=0;i<v.size();i++){
+	
+		cout << v[i] << endl;
+		fflush(stdout);
+		string s;
+		cin >> s;
+		//ss++;
+		if (s == "yes") {
+			ans++;
+			if (v[i] *v[i] <= 100) {
+				cout << v[i] * v[i] << endl;
+
+				cin >> s;
+				//ss++;
+				if (s == "yes") 
+					ans++;
+			}
+			
+		}
+			
+	}
+	//cout << "ans =" << ans << "\n";
+	if (ans > 1)
+		cout << "composite" << endl;
+	else 
+		cout << "prime" << endl;
+	//cout << ss << "\n";
+	}
